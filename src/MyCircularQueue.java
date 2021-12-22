@@ -16,6 +16,27 @@ import java.util.Objects;
  * isEmpty(): 检查循环队列是否为空。
  * isFull(): 检查循环队列是否已满。
  *
+ * 思路:
+ *  本题中最好使用数组存储数据, 其中记录头指针和尾指针
+ *  如果队列对空, 则头指针和尾指针都为null
+ *
+ *  Front: 从队首获取元素。如果队列为空，返回 -1 。
+ *       如果head不为null, 返回head的数据
+ *
+ *  Rear: 获取队尾元素。如果队列为空，返回 -1 。
+ *      tail不为null时返回tail位置的数据
+ *
+ *  enQueue(value): 向循环队列插入一个元素。如果成功插入则返回真。
+ *      如果没有满, 则tail+1或者tail为最后一个元素在0位置加一个数据, tail移动
+ *
+ *  deQueue(): 从循环队列中删除一个元素。如果成功删除则返回真。
+ *      删除队列head的元素
+ *
+ *  isEmpty(): 检查循环队列是否为空。
+ *      头指针或者尾指针为null
+ *
+ *  isFull(): 检查循环队列是否已满。
+ *      head -1 = tail 或者 tail为最后一个元素, 而head为第一个元素
  * @author : xiongzq
  * @date : 2021-12-21
  */
